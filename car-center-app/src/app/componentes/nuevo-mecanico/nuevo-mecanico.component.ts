@@ -33,30 +33,40 @@ export class NuevoMecanicoComponent implements OnInit {
       documento: new FormControl(null, [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(30),
         Validators.pattern('^[0-9]*$'),
       ]),
       primerNombre: new FormControl(null, [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(30),
       ]),
-      segundoNombre: new FormControl(null),
+      segundoNombre: new FormControl(null, [
+        Validators.maxLength(30),
+      ]),
       primerApellido: new FormControl(null, [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(30),
       ]),
-      segundoApellido: new FormControl(null),
+      segundoApellido: new FormControl(null, [
+        Validators.maxLength(30),
+      ]),
       celular: new FormControl(null, [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(10),
         Validators.pattern('^[0-9]*$'),
       ]),
       direccion: new FormControl(null, [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(200),
       ]),
       email: new FormControl(null, [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(100),
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
       ]),
       estado: new FormControl(null, [
