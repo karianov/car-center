@@ -1,0 +1,49 @@
+<div class="spinner-border" *ngIf="cargando" role="status"></div>
+<div *ngIf="valido" role="alert">
+  <div *ngIf="mecanicos.length > 0">
+    <table mdbTable responsive="true">
+      <thead>
+        <tr>
+          <th scope="col">Tipo de documento</th>
+          <th scope="col">Número de documento</th>
+          <th scope="col">Primer nombre</th>
+          <th scope="col">Segundo nombre</th>
+          <th scope="col">Primer apellido</th>
+          <th scope="col">Segundo apellido</th>
+          <th scope="col">Teléfono celular</th>
+          <th scope="col">Dirección de residencia</th>
+          <th scope="col">Correo electrónico</th>
+          <th scope="col">Estado (D o N)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor="let mecanico of mecanicos">
+          <th scope="row">{{ mecanico.tipoDocumento }}</th>
+          <th scope="row">{{ mecanico.documento }}</th>
+          <th scope="row">{{ mecanico.primerNombre }}</th>
+          <th scope="row">{{ mecanico.segundoNombre }}</th>
+          <th scope="row">{{ mecanico.primerApellido }}</th>
+          <th scope="row">{{ mecanico.segundoApellido }}</th>
+          <th scope="row">{{ mecanico.celular }}</th>
+          <th scope="row">{{ mecanico.direccion }}</th>
+          <th scope="row">{{ mecanico.email }}</th>
+          <th scope="row">{{ mecanico.estado }}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="mecanicos.length === 0">
+    <div class="alert alert-warning" role="alert">
+      No hay mecánicos disponibles.
+    </div>
+  </div>
+</div>
+<div class="alert alert-danger" *ngIf="error" role="alert">
+  Ocurrió un error al listar los mecánicos disponibles.
+</div>
+<button
+  class="btn btn-secondary btn-block my-4"
+  (click)="cargar()"
+>
+  Volver a cargar los mecánicos disponibles
+</button>

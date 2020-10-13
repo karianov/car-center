@@ -1,0 +1,194 @@
+<form class="text-center" [formGroup]="formularioMecanico">
+  <div class="md-form">
+    <input
+      type="text"
+      id="tipoDocumento"
+      class="form-control"
+      formControlName="tipoDocumento"
+      placeholder="Tipo de documento"
+    />
+    <mdb-error
+      *ngIf="
+        tipoDocumento.invalid && (tipoDocumento.dirty || tipoDocumento.touched)
+      "
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success
+      *ngIf="
+        tipoDocumento.valid && (tipoDocumento.dirty || tipoDocumento.touched)
+      "
+      >Correcto</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="documento"
+      class="form-control"
+      formControlName="documento"
+      placeholder="Número de documento"
+    />
+    <mdb-error
+      *ngIf="documento.invalid && (documento.dirty || documento.touched)"
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success
+      *ngIf="documento.valid && (documento.dirty || documento.touched)"
+      >Correcto</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="primerNombre"
+      class="form-control"
+      formControlName="primerNombre"
+      placeholder="Primer nombre"
+    />
+    <mdb-error
+      *ngIf="
+        primerNombre.invalid && (primerNombre.dirty || primerNombre.touched)
+      "
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success
+      *ngIf="primerNombre.valid && (primerNombre.dirty || primerNombre.touched)"
+      >Correcto</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="segundoNombre"
+      class="form-control"
+      formControlName="segundoNombre"
+      placeholder="Segundo nombre"
+    />
+    <mdb-error
+      *ngIf="
+        segundoNombre.invalid && (segundoNombre.dirty || segundoNombre.touched)
+      "
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success
+      *ngIf="
+        segundoNombre.valid && (segundoNombre.dirty || segundoNombre.touched)
+      "
+      >Correcto (este dato no es obligatorio)</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="primerApellido"
+      class="form-control"
+      formControlName="primerApellido"
+      placeholder="Primer apellido"
+    />
+    <mdb-error
+      *ngIf="
+        primerApellido.invalid &&
+        (primerApellido.dirty || primerApellido.touched)
+      "
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success
+      *ngIf="
+        primerApellido.valid && (primerApellido.dirty || primerApellido.touched)
+      "
+      >Correcto</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="segundoApellido"
+      class="form-control"
+      formControlName="segundoApellido"
+      placeholder="Segundo apellido"
+    />
+    <mdb-error
+      *ngIf="
+        segundoApellido.invalid &&
+        (segundoApellido.dirty || segundoApellido.touched)
+      "
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success
+      *ngIf="
+        segundoApellido.valid &&
+        (segundoApellido.dirty || segundoApellido.touched)
+      "
+      >Correcto (este dato no es obligatorio)</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="celular"
+      class="form-control"
+      formControlName="celular"
+      placeholder="Teléfono celular"
+    />
+    <mdb-error *ngIf="celular.invalid && (celular.dirty || celular.touched)"
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success *ngIf="celular.valid && (celular.dirty || celular.touched)"
+      >Correcto</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="direccion"
+      class="form-control"
+      formControlName="direccion"
+      placeholder="Dirección de residencia"
+    />
+    <mdb-error *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)"
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success *ngIf="direccion.valid && (direccion.dirty || direccion.touched)"
+      >Correcto</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="email"
+      class="form-control"
+      formControlName="email"
+      placeholder="Correo electrónico"
+    />
+    <mdb-error *ngIf="email.invalid && (email.dirty || email.touched)"
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success *ngIf="email.valid && (email.dirty || email.touched)"
+      >Correcto</mdb-success
+    >
+  </div>
+  <div class="md-form">
+    <input
+      type="text"
+      id="estado"
+      class="form-control"
+      formControlName="estado"
+      placeholder="Estado (D = Disponible, N = No disponible)"
+    />
+    <mdb-error *ngIf="estado.invalid && (estado.dirty || estado.touched)"
+      >Verifica este dato</mdb-error
+    >
+    <mdb-success *ngIf="estado.valid && (estado.dirty || estado.touched)"
+      >Correcto</mdb-success
+    >
+  </div>
+  <button class="btn btn-info btn-block my-4" [disabled]="!(tipoDocumento.valid && (tipoDocumento.dirty || tipoDocumento.touched)) || !(documento.valid && (documento.dirty || documento.touched)) || !(primerNombre.valid && (primerNombre.dirty || primerNombre.touched)) || !(primerApellido.valid && (primerApellido.dirty || primerApellido.touched)) || !(celular.valid && (celular.dirty || celular.touched)) || !(direccion.valid && (direccion.dirty || direccion.touched)) || !(email.valid && (email.dirty || email.touched)) || !(estado.valid && (estado.dirty || estado.touched))" (click)="submit()">Guardar mecánico</button>
+  <div class="spinner-border" *ngIf="cargando" role="status"></div>
+  <div class="alert alert-success" *ngIf="valido" role="alert">
+    Mecánico creado con éxito
+  </div>
+  <div class="alert alert-danger" *ngIf="error" role="alert">
+    Ocurrió un error al registrar este mecánico. Por favor compruebe los datos
+    ingresados.
+  </div>
+</form>
